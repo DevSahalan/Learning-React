@@ -1,4 +1,4 @@
-import React, { useReducer, useContext } from "react";
+import React, { useReducer } from "react";
 import CounterItem from "./CounterItem";
 
 export const CountValue = React.createContext();
