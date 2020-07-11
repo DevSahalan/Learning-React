@@ -1,16 +1,13 @@
 import React from "react";
-import { countState, historyState} from "./index";
-import { useRecoilValue, useSetRecoilState, useRecoilState} from "recoil";
-
-
+import { countState, historyState } from "./index";
+import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
 
 function Controller() {
-  // const [count, setCount] = useRecoilState(countState);
-  const count = useRecoilValue(countState)
-  const setCount = useSetRecoilState(countState)
+  const [count, setCount] = useRecoilState(countState);
+  // const count = useRecoilValue(countState)
+  // const setCount = useSetRecoilState(countState)
   const setHistory = useSetRecoilState(historyState);
   const history = useRecoilValue(historyState);
-  
 
   const inc = () => {
     setCount(count + 1);
@@ -26,7 +23,9 @@ function Controller() {
       <button onClick={dec}>Decrement</button>
       <ul>
         {history.map((item) => (
-          <li> {item} current value : {count}</li>
+          <li>
+            {item} current value : {count}
+          </li>
         ))}
       </ul>
     </div>
